@@ -1,0 +1,10 @@
+{
+	"deployment": {
+		"name": "cron-functions",
+		"stack": "node16",
+		"type": "advancedio"
+	},
+	"execution": {
+		"main": "index.js"
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "targets": [
+      "cron-functions"
+    ],
+    "ignore": [],
+    "source": "functions"
+  },
+  "client": {
+    "source": "app",
+    "plugin": "zcatalyst-cli-plugin-react"
+  }
+}
