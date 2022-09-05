@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 
 export default function BaseButton() {
     const postData = {
-        playerName: "name",
+        playerName: "Ryan",
         score: 2
     };
 
@@ -11,7 +11,7 @@ export default function BaseButton() {
         <Button
             variant="outlined"
             onClick={() => {
-                fetch('/server/cron-functions/hi', {
+                fetch('/server/cron-functions/get-scores', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

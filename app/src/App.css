@@ -1,7 +1,7 @@
 .WoodPanel {
   text-align: center;
-  background-image: url("./images/wood-panel-lg.png");
-  background-repeat: no-repeat;
+  background-image: url("./images/wood-panel.png");
+  background-repeat: repeat;
 }
 
 .Stone {
