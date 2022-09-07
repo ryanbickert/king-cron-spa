@@ -51,7 +51,7 @@ app.get('/get-scores', async (req, res) => {
 	await table.getPagedRows({ nextToken: undefined, maxRows: 5 })
 		.then(({ data }) => {
 			res.setHeader('Content-Type', 'application/json');
-			res.send(data);
+			res.status(200).send(data);
 		})
 		.catch((err) => {
 			console.log(err.toString());
