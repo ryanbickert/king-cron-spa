@@ -5,6 +5,9 @@ import CustomTables from './components/CustomDataGrid';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+import scrollBorderA from './images/scroll-border-a.png';
+import scrollBorderB from './images/scroll-border-b.png';
+import cronCloseup from './images/cron-closeup-transparent.png';
 import cronMap from './images/cron-map.png';
 import UnityGame from './components/UnityGame';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
@@ -52,9 +55,29 @@ function App() {
   return (
     <div>
       <div className="Stone">
-        Photo here
+        <img
+          src={cronCloseup}
+          alt="Map"
+          style={{
+            width: '90vw',
+            height: '90vh'
+          }} />
+        <img
+          src={scrollBorderA}
+          alt="Map"
+          style={{
+            width: '100vw',
+            height: 30
+          }} />
       </div >
       <div className="WoodPanel">
+        <img
+          src={scrollBorderB}
+          alt="Map"
+          style={{
+            width: '100vw',
+            height: 30
+          }} />
         <TransformWrapper
           centerOnInit
           initialScale={6}
@@ -74,15 +97,32 @@ function App() {
         Gifs here
       </div >
       <div className="WoodPanel">
-        <UnityGame />
+        <Box sx={{ height: 50, width: '100vw' }} />
+        <Box sx={{ height: 650, width: '100vw' }}>
+          <UnityGame />
+        </Box>
+        <img
+          src={scrollBorderA}
+          alt="Map"
+          style={{
+            width: '100vw',
+            height: 30
+          }} />
       </div >
       <div className="Stone">
+        <img
+          src={scrollBorderB}
+          alt="Map"
+          style={{
+            width: '100vw',
+            height: 30
+          }} />
         <Container maxWidth="sm">
           High Scores
           <CustomTables columns={columns} rows={rows} />
         </Container>
       </div >
-    </div>
+    </div >
   );
 }
 

@@ -1,11 +1,13 @@
 .WoodPanel {
   text-align: center;
+  font-size: 0;
   background-image: url("./images/wood-panel.png");
   background-repeat: repeat;
 }
 
 .Stone {
   text-align: center;
+  font-size: 0;
   background-image: url("./images/stone.png");
   background-repeat: repeat;
 }
