@@ -71,18 +71,7 @@ function App() {
           <p style={{ marginTop: 20, marginBottom: 40, lineHeight: 1, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '5vh' }}>
             The Kingdom Awaits
           </p>
-          <img
-            src={playNowButton}
-            alt="Play Now"
-            aria-label="Play Now"
-            style={{
-              height: '5vh',
-              width: '12vw'
-            }}
-          />
-          <Box sx={{ height: '5vh', width: '12vw', position: 'relative', top: '-10%', left: "37.95%", backgroundColor: 'red' }}>
-            <CustomButtons text="hi" />
-          </Box>
+          <CustomButtons />
         </Box>
         <CustomBorder />
       </div >
