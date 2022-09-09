@@ -1,6 +1,7 @@
 .WoodPanel {
   text-align: center;
   font-size: 0;
+  line-height: 1;
   background-image: url("./images/wood-panel.png");
   background-repeat: repeat;
 }
@@ -8,6 +9,12 @@
 .Stone {
   text-align: center;
   font-size: 0;
+  line-height: 1;
   background-image: url("./images/stone.png");
   background-repeat: repeat;
+}
+
+@font-face {
+  font-family: 'AlbertText';
+  src: url(./fonts/AlbertText-Bold.ttf);
 }

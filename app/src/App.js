@@ -1,13 +1,13 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import CustomButtons from './components/CustomButtons';
+import CustomBorder, { CustomBorderB } from './components/CustomBorders';
 import CustomTables from './components/CustomDataGrid';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import scrollBorderA from './images/scroll-border-a.png';
-import scrollBorderB from './images/scroll-border-b.png';
 import cronCloseup from './images/cron-closeup-transparent.png';
+import playNowButton from './images/play-now.png';
 import cronMap from './images/cron-map.png';
 import UnityGame from './components/UnityGame';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
@@ -57,27 +57,37 @@ function App() {
       <div className="Stone">
         <img
           src={cronCloseup}
-          alt="Map"
+          alt="King Cron Closeup"
+          aria-label="King Cron Closeup"
           style={{
             width: '90vw',
             height: '90vh'
-          }} />
-        <img
-          src={scrollBorderA}
-          alt="Map"
-          style={{
-            width: '100vw',
-            height: 30
-          }} />
+          }}
+        />
+        <Box sx={{ height: '50vh', width: '50vw', maxWidth: '100%', position: 'absolute', top: '10%', left: "35%" }}>
+          <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '12vh', padding: 0 }}>
+            King Cron
+          </p>
+          <p style={{ marginTop: 20, marginBottom: 40, lineHeight: 1, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '5vh' }}>
+            The Kingdom Awaits
+          </p>
+          <img
+            src={playNowButton}
+            alt="Play Now"
+            aria-label="Play Now"
+            style={{
+              height: '5vh',
+              width: '12vw'
+            }}
+          />
+          <Box sx={{ height: '5vh', width: '12vw', position: 'relative', top: '-10%', left: "37.95%", backgroundColor: 'red' }}>
+            <CustomButtons text="hi" />
+          </Box>
+        </Box>
+        <CustomBorder />
       </div >
       <div className="WoodPanel">
-        <img
-          src={scrollBorderB}
-          alt="Map"
-          style={{
-            width: '100vw',
-            height: 30
-          }} />
+        <CustomBorderB />
         <TransformWrapper
           centerOnInit
           initialScale={6}
@@ -86,10 +96,12 @@ function App() {
             <img
               src={cronMap}
               alt="Map"
+              aria-label="Map"
               style={{
                 width: '70vw',
                 height: '70vh'
-              }} />
+              }}
+            />
           </TransformComponent>
         </TransformWrapper>
       </div >
@@ -97,26 +109,14 @@ function App() {
         Gifs here
       </div >
       <div className="WoodPanel">
-        <Box sx={{ height: 50, width: '100vw' }} />
-        <Box sx={{ height: 650, width: '100vw' }}>
+        <Box sx={{ height: 50, width: '100vw', maxWidth: '100%' }} />
+        <Box sx={{ height: 650, width: '100vw', maxWidth: '100%' }}>
           <UnityGame />
         </Box>
-        <img
-          src={scrollBorderA}
-          alt="Map"
-          style={{
-            width: '100vw',
-            height: 30
-          }} />
+        <CustomBorder />
       </div >
       <div className="Stone">
-        <img
-          src={scrollBorderB}
-          alt="Map"
-          style={{
-            width: '100vw',
-            height: 30
-          }} />
+        <CustomBorderB />
         <Container maxWidth="sm">
           High Scores
           <CustomTables columns={columns} rows={rows} />

@@ -1,25 +1,13 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 
-export default function BaseButton() {
-    const postData = {
-        playerName: "Ryan",
-        score: 2
-    };
-
+export default function CustomButton(props) {
     return (
         <Button
-            variant="outlined"
             onClick={() => {
-                fetch('/server/cron-functions/get-scores', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(postData)
-                });
+                Window.scroll(10, 15);
             }}>
-            Base Button
+            {props.text}
         </Button>
     );
 }
