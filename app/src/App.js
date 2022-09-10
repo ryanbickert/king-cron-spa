@@ -2,13 +2,13 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import CustomButtons from './components/CustomButtons';
 import CustomBorder, { CustomBorderB } from './components/CustomBorders';
-import CustomTables from './components/CustomDataGrid';
+import CustomDataGrid from './components/CustomDataGrid';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import cronCloseup from './images/cron-closeup-transparent.png';
-import playNowButton from './images/play-now.png';
 import cronMap from './images/cron-map.png';
+import cronGif from './images/cron-gif.gif';
 import UnityGame from './components/UnityGame';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
@@ -64,7 +64,7 @@ function App() {
             height: '90vh'
           }}
         />
-        <Box sx={{ height: '50vh', width: '50vw', maxWidth: '100%', position: 'absolute', top: '10%', left: "35%" }}>
+        <Box sx={{ height: 500, width: '50vw', maxWidth: '100%', position: 'absolute', top: '10%', left: "35%" }}>
           <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '12vh', padding: 0 }}>
             King Cron
           </p>
@@ -77,27 +77,59 @@ function App() {
       </div >
       <div className="WoodPanel">
         <CustomBorderB />
-        <TransformWrapper
-          centerOnInit
-          initialScale={6}
-        >
-          <TransformComponent>
-            <img
-              src={cronMap}
-              alt="Map"
-              aria-label="Map"
-              style={{
-                width: '70vw',
-                height: '70vh'
-              }}
-            />
-          </TransformComponent>
-        </TransformWrapper>
+        <Box sx={{ height: '5vh', width: '100vw', maxWidth: '100%' }} />
+        <Grid container>
+          <Grid item xs={1.85} />
+          <Grid item>
+            <Box sx={{ height: '75vh', width: '70vw' }}>
+              <TransformWrapper centerOnInit initialScale={6} wheel={{ step: 0.05 }} >
+                <TransformComponent>
+                  <img
+                    src={cronMap}
+                    alt="Map"
+                    aria-label="Map"
+                    style={{
+                      height: '70vh',
+                      width: '70vw'
+                    }}
+                  />
+                </TransformComponent>
+              </TransformWrapper>
+            </Box>
+          </Grid>
+        </Grid>
+        <CustomBorder />
       </div >
       <div className="Stone">
-        Gifs here
+        <CustomBorderB />
+        <Box sx={{ height: '5vh', width: '100vw', maxWidth: '100%' }} />
+        <Grid container>
+          <Grid item xs={1.8} />
+          <Grid item>
+            <Box sx={{ height: '75vh', width: '70vw' }}>
+              <TransformWrapper
+                initialScale={3} initialPositionY={-1000}
+                panning={{ disabled: true }} wheel={{ disabled: true }} pinch={{ disabled: true }}
+              >
+                <TransformComponent>
+                  <img
+                    src={cronGif}
+                    alt="Characters"
+                    aria-label="Characters"
+                    style={{
+                      height: '70vh',
+                      width: '70vw'
+                    }}
+                  />
+                </TransformComponent>
+              </TransformWrapper>
+            </Box>
+          </Grid>
+        </Grid>
+        <CustomBorder />
       </div >
       <div className="WoodPanel">
+        <CustomBorderB />
         <Box sx={{ height: 50, width: '100vw', maxWidth: '100%' }} />
         <Box sx={{ height: 650, width: '100vw', maxWidth: '100%' }}>
           <UnityGame />
@@ -108,7 +140,7 @@ function App() {
         <CustomBorderB />
         <Container maxWidth="sm">
           High Scores
-          <CustomTables columns={columns} rows={rows} />
+          <CustomDataGrid columns={columns} rows={rows} />
         </Container>
       </div >
     </div >
