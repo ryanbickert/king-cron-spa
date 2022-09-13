@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '@mui/material/styles';
+import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import playNowImage from '../images/play-now.png';
 import cronButtonImage from '../images/cron-button.png';
@@ -23,19 +23,24 @@ const CharacterButton = styled(Button)(({ }) => ({
     borderRadius: 100,
     backgroundSize: '15vh 7.5vw',
     backgroundRepeat: 'no-repeat',
-    color: '#5ABAF2'
+    '&:hover': {
+        backgroundColor: alpha('#FFFFFF', 0.5)
+    }
 }));
 
 const CronButtonStyled = styled(CharacterButton)(({ }) => ({
-    backgroundImage: `url(${cronButtonImage})`
+    backgroundImage: `url(${cronButtonImage})`,
+    color: '#EE8A45'
 }));
 
 const ServerRedButtonStyled = styled(CharacterButton)(({ }) => ({
-    backgroundImage: `url(${serverRedButtonImage})`
+    backgroundImage: `url(${serverRedButtonImage})`,
+    color: '#FF0000'
 }));
 
 const ServerGreenButtonStyled = styled(CharacterButton)(({ }) => ({
-    backgroundImage: `url(${serverGreenButtonImage})`
+    backgroundImage: `url(${serverGreenButtonImage})`,
+    color: '#5BD94C'
 }));
 
 export default function CustomButton() {
@@ -49,20 +54,26 @@ export default function CustomButton() {
     );
 }
 
-export function CronButton() {
+export function CronButton({ handleClick }) {
     return (
-        <CronButtonStyled />
+        <CronButtonStyled
+            onClick={handleClick}
+        />
     );
 }
 
-export function ServerRedButton() {
+export function ServerRedButton({ handleClick }) {
     return (
-        <ServerRedButtonStyled />
+        <ServerRedButtonStyled
+            onClick={handleClick}
+        />
     );
 }
 
-export function ServerGreenButton() {
+export function ServerGreenButton({ handleClick }) {
     return (
-        <ServerGreenButtonStyled />
+        <ServerGreenButtonStyled
+            onClick={handleClick}
+        />
     );
 }

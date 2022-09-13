@@ -1,6 +1,5 @@
 import '../App.css';
 import React from 'react';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import CustomBorder, { CustomBorderB } from '../components/CustomBorders';
@@ -11,80 +10,112 @@ import serverGreenGif from '../images/server-green-gif.gif';
 
 export default function GifsPanel() {
     return (
-        <div className="Stone">
-            <CustomBorderB />
-            <Box sx={{ height: '12vh', width: '100vw', maxWidth: '100%' }}>
-                <p style={{ marginTop: 25, marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '5vh', padding: 0 }}>
-                    King Cron
-                </p>
-                <p style={{ marginTop: 15, marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '3vh' }}>
-                    Fearless leader and distinguished explorer
-                </p>
-            </Box>
-            <Grid container>
-                <Grid item xs={2.25} />
-                <Grid item>
-                    <Box sx={{ height: '45vh', width: '60vw', overflow: 'hidden' }}>
-                        <TransformWrapper
-                            panning={{ disabled: true }} wheel={{ disabled: true }} pinch={{ disabled: true }}
-                        >
-                            {({ zoomToElement }) => {
-
+        <div className='Default'>
+            <TransformWrapper
+                initialScale={1}
+                minScale={1}
+                panning={{ disabled: true }}
+                wheel={{ disabled: true }}
+                pinch={{ disabled: true }}
+            >
+                {({ zoomToElement }) => (
+                    <>
+                        <TransformComponent
+                            wrapperStyle={{
+                                height: '70vh',
+                                width: '100vw',
+                                maxWidth: '100%'
                             }}
-                            <TransformComponent>
-                                <div id="cronGif">
-                                    <img
-                                        src={cronGif}
-                                        alt="King Cron"
-                                        aria-label="King Cron"
-                                        style={{
-                                            height: 500,
-                                            width: 1150
-                                        }}
-                                    />
+                        >
+                            <div
+                                style={{
+                                    display: 'flex'
+                                }}
+                            >
+                                <div>
+                                    <Box sx={{ width: '20vw', position: 'absolute', top: '-1%', left: '1.75%', textAlign: 'center' }}>
+                                        <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '8vh', padding: 0 }}>
+                                            King Cron
+                                        </p>
+                                        <p style={{ marginTop: 20, marginBottom: 40, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '4vh' }}>
+                                            Fearless leader and distinguished explorer
+                                        </p>
+                                    </Box>
                                 </div>
-                                <div id="serverRedGif">
-                                    <img
-                                        src={serverRedGif}
-                                        alt="Server Red"
-                                        aria-label="Server Red"
-                                        style={{
-                                            height: 500,
-                                            width: 1150
-                                        }}
-                                    />
+                                <div
+                                    id="cronGif"
+                                    style={{
+                                        height: '70vh',
+                                        width: '100vw',
+                                        backgroundImage: `url(${cronGif})`,
+                                        backgroundSize: '100% 100%',
+                                        backgroundRepeat: 'no-repeat'
+                                    }}
+                                />
+                                <div>
+                                    <Box sx={{ width: '20vw', position: 'absolute', top: '-0%', left: '35.25%', textAlign: 'center' }}>
+                                        <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '8vh', padding: 0 }}>
+                                            Server Red
+                                        </p>
+                                        <p style={{ marginTop: 20, marginBottom: 40, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '4vh' }}>
+                                            Rambunctious and reliable
+                                        </p>
+                                    </Box>
                                 </div>
-                                <div id="serverGreenGif">
-                                    <img
-                                        src={serverGreenGif}
-                                        alt="Server Green"
-                                        aria-label="Server Green"
-                                        style={{
-                                            height: 500,
-                                            width: 1150
-                                        }}
-                                    />
+                                <div
+                                    id="serverRedGif"
+                                    style={{
+                                        height: '70vh',
+                                        width: '100vw',
+                                        backgroundImage: `url(${serverRedGif})`,
+                                        backgroundSize: '100% 100%',
+                                        backgroundRepeat: 'no-repeat'
+                                    }}
+                                />
+                                <div>
+                                    <Box sx={{ width: '20vw', position: 'absolute', top: '-1%', left: '68.5%', textAlign: 'center' }}>
+                                        <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '8vh', padding: 0 }}>
+                                            Server Green
+                                        </p>
+                                        <p style={{ marginTop: 20, marginBottom: 40, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '4vh' }}>
+                                            Hasty and helpful
+                                        </p>
+                                    </Box>
                                 </div>
-                            </TransformComponent>
-                        </TransformWrapper>
-                    </Box>
-                </Grid>
-            </Grid>
-            <Box sx={{ height: '25vh', width: '100vw', maxWidth: '100%' }}>
-                <Grid container>
-                    <Grid item xs={1.6} />
-                    <Grid item xs={3}>
-                        <CronButton />
-                    </Grid>
-                    <Grid item xs={3}>
-                        <ServerRedButton />
-                    </Grid>
-                    <Grid item xs={3}>
-                        <ServerGreenButton />
-                    </Grid>
-                </Grid>
-            </Box>
-            <CustomBorder />
-        </div >
+                                <div
+                                    id="serverGreenGif"
+                                    style={{
+                                        height: '70vh',
+                                        width: '100vw',
+                                        backgroundImage: `url(${serverGreenGif})`,
+                                        backgroundSize: '100% 100%',
+                                        backgroundRepeat: 'no-repeat'
+                                    }}
+                                />
+                            </div>
+                        </TransformComponent>
+                        <div style={{
+                            height: '70vh',
+                            width: '100vw',
+                            maxWidth: '100%',
+                            position: 'absolute',
+                            top: '179.5%'
+                        }}>
+                            <Box sx={{ position: 'absolute', top: '0%', textAlign: 'center', padding: 0, marginBottom: 0 }}>
+                                <CustomBorderB />
+                            </Box>
+                            <Box sx={{ height: '10vh', width: '20vw', position: 'absolute', top: '50%', left: '5%', textAlign: 'center' }}>
+                                <CronButton handleClick={() => zoomToElement("cronGif")} />
+                                <ServerRedButton handleClick={() => zoomToElement("serverRedGif")} />
+                                <ServerGreenButton handleClick={() => zoomToElement("serverGreenGif")} />
+                            </Box>
+                            <Box sx={{ position: 'absolute', top: '95.65%', textAlign: 'center', padding: 0, marginBottom: 0 }}>
+                                <CustomBorder />
+                            </Box>
+                        </div>
+                    </>
+                )}
+            </TransformWrapper>
+        </div>
     );
 }

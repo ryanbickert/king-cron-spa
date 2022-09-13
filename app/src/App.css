@@ -1,3 +1,9 @@
+.Default {
+  text-align: center;
+  font-size: 0;
+  line-height: 1;
+}
+
 .WoodPanel {
   text-align: center;
   font-size: 0;
