@@ -12,6 +12,7 @@ export default function CronCloseupPanel() {
                 src={cronCloseup}
                 alt="King Cron Closeup"
                 aria-label="King Cron Closeup"
+                draggable='false'
                 style={{
                     width: '90vw',
                     height: '90vh'

@@ -7,47 +7,59 @@ import serverRedButtonImage from '../images/server-red-button.png';
 import serverGreenButtonImage from '../images/server-green-button.png';
 
 const PlayNowButton = styled(Button)(({ }) => ({
-    height: '5vh',
     width: '12vw',
+    height: '5vh',
     backgroundImage: `url(${playNowImage})`,
-    backgroundSize: '100%',
+    backgroundSize: '12vw 5vh',
     backgroundRepeat: 'no-repeat',
     fontFamily: 'AlbertText',
     color: '#573720',
-    fontSize: '3.5vh'
+    fontSize: '2vw',
+    whiteSpace: 'nowrap',
+    '&:hover': {
+        color: '#21140B'
+    }
 }));
 
 const CharacterButton = styled(Button)(({ }) => ({
-    height: '15vh',
     width: '7.15vw',
+    height: '15vh',
     borderRadius: 100,
-    backgroundSize: '15vh 7.5vw',
-    backgroundRepeat: 'no-repeat',
-    '&:hover': {
-        backgroundColor: alpha('#FFFFFF', 0.5)
-    }
+    backgroundSize: '7.15vw 15vh',
+    backgroundRepeat: 'no-repeat'
 }));
 
 const CronButtonStyled = styled(CharacterButton)(({ }) => ({
     backgroundImage: `url(${cronButtonImage})`,
-    color: '#EE8A45'
+    color: '#EE8A45',
+    '&:hover': {
+        backgroundColor: alpha('#EE8A45', 0.8)
+    }
 }));
 
 const ServerRedButtonStyled = styled(CharacterButton)(({ }) => ({
     backgroundImage: `url(${serverRedButtonImage})`,
-    color: '#FF0000'
+    color: '#FF0000',
+    '&:hover': {
+        backgroundColor: alpha('#FF0000', 0.8)
+    }
 }));
 
 const ServerGreenButtonStyled = styled(CharacterButton)(({ }) => ({
     backgroundImage: `url(${serverGreenButtonImage})`,
-    color: '#5BD94C'
+    color: '#5BD94C',
+    '&:hover': {
+        backgroundColor: alpha('#5BD94C', 0.8)
+    }
 }));
 
 export default function CustomButton() {
     return (
         <PlayNowButton
             onClick={() => {
-                Window.scroll(10, 15);
+                document.getElementById('Game').scrollIntoView({
+                    behavior: 'smooth'
+                });
             }}>
             Play Now
         </PlayNowButton>
