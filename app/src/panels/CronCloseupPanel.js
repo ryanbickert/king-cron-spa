@@ -10,15 +10,15 @@ export default function CronCloseupPanel() {
         <div className="Stone">
             <img
                 src={cronCloseup}
-                alt="King Cron Closeup"
-                aria-label="King Cron Closeup"
+                alt='King Cron Closeup'
+                aria-label='King Cron Closeup'
                 draggable='false'
                 style={{
                     width: '90vw',
                     height: '90vh'
                 }}
             />
-            <Box sx={{ height: 500, width: '50vw', maxWidth: '100%', position: 'absolute', top: '10%', left: "35%" }}>
+            <Box sx={{ height: 500, width: '50vw', position: 'absolute', top: '10%', left: "35%" }}>
                 <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '12vh', padding: 0 }}>
                     King Cron
                 </p>
