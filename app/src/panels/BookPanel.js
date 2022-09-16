@@ -9,12 +9,12 @@ import rightPage from '../images/right-page.png';
 export default function BookPanel() {
     const pages = [leftPage, rightPage, leftPage, rightPage, leftPage, rightPage, leftPage, rightPage]
 
-    const bookWidth = (window.innerWidth / 3);
-    const bookHeight = (window.innerHeight * 0.7);
+    const bookWidth = (window.innerWidth);
+    const bookHeight = (window.innerHeight);
 
-    const Page = React.forwardRef((props, ref) => {
+    const LeftPage = React.forwardRef((props, ref) => {
         return (
-            <div className='demoPage' ref={ref}>
+            <div className='leftPage' ref={ref}>
                 <img
                     src={props.imgSrc}
                     alt=""
@@ -28,62 +28,51 @@ export default function BookPanel() {
         );
     })
 
-    const book = useRef(null);
+    const RightPage = React.forwardRef((props, ref) => {
+        return (
+            <div className='rightPage' ref={ref}>
+                <img
+                    src={props.imgSrc}
+                    alt=""
+                    style={{
+                        objectFit: 'fill',
+                        maxWidth: '100%'
+                    }}
+                />
+                <p>{props.children}</p>
+            </div>
+        );
+    })
 
     return (
-        <div
-        style={{
-            width: '60vw',
-            backgroundColor: 'blue'
-        }}
-        >
-            <HTMLFlipBook
-                width={bookWidth} // 750
-                height={bookHeight} //695
-                size='stretch'
-                maxWidth={1925} // 1000
-                maxHeight={bookHeight} // 1533
-                minWidth={100} // 315
-                minHeight={100} // 400
-                maxShadowOpacity={0.25}
-                mobileScrollSupport={true}
-                ref={book}
+        <div className="WoodPanel">
+            <Box sx={{ width: '100vw', height: '5vh', maxWidth: '100%' }} />
+            <img
+                src={bookBase}
+                alt='Book Base'
+                aria-label='Book Base'
+                draggable='false'
                 style={{
-                    backgroundColor: 'red'
+                    width: '70vw',
+                    height: '80vh'
                 }}
-            >
-                <Page imgSrc={""}>Hello test</Page>
-                <Page imgSrc={""}>Hello test</Page>
-                <Page imgSrc={""}>Hello test</Page>
-                <Page imgSrc={""}>Hello test</Page>
-                <Page imgSrc={""}>Hello test</Page>
-                <Page imgSrc={""}>Hello test</Page>
-            </HTMLFlipBook>
+            />
+            <Box sx={{ width: '50vw', height: '50vh', maxWidth: '100%' }}>
+                <HTMLFlipBook
+                    width={520}
+                    height={650}
+                    size='stretch'
+                    maxShadowOpacity={0.25}
+                    mobileScrollSupport={true}
+                >
+                    <LeftPage imgSrc={""}>Hello test</LeftPage>
+                    <RightPage imgSrc={""}>Hello test</RightPage>
+                    <LeftPage imgSrc={""}>Hello test</LeftPage>
+                    <RightPage imgSrc={""}>Hello test</RightPage>
+                    <LeftPage imgSrc={""}>Hello test</LeftPage>
+                    <RightPage imgSrc={""}>Hello test</RightPage>
+                </HTMLFlipBook>
+            </Box>
         </div>
     );
 }
-
-{/* <div className="WoodPanel">
-<img
-    src={bookBase}
-    alt="Book Base"
-    aria-label="Book Base"
-    draggable='false'
-    style={{
-        width: '60vw',
-        height: '80vh'
-    }}
-/> */}
-
-/* {pages.map((page, i) => (
-    <div className="demoPage" key={i}>
-        <img
-            src={page}
-            alt={i}
-            style={{
-                width: 500,
-                height: 600
-            }}
-        />
-    </div>
-))} */

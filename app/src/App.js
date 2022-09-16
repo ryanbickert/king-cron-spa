@@ -9,7 +9,14 @@ import BookPanel from './panels/BookPanel';
 
 function App() {
   return (
-    <BookPanel />
+    <div>
+      <CronCloseupPanel />
+      <MapPanel />
+      <GifsPanel />
+      <GamePanel />
+      <ScoresPanel />
+      <BookPanel />
+    </div>
   );
 }
 
