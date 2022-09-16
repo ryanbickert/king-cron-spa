@@ -7,6 +7,7 @@ import HTMLFlipBook from 'react-pageflip';
 import bookBase from '../images/book-base.png';
 import leftPage from '../images/left-page.png';
 import rightPage from '../images/right-page.png';
+import pageOne from '../images/page-one.gif';
 
 export default function BookPanel() {
     const pages = [leftPage, rightPage, leftPage, rightPage, leftPage, rightPage, leftPage, rightPage]
@@ -21,7 +22,7 @@ export default function BookPanel() {
                     src={props.imgSrc}
                     alt=""
                     style={{
-                        objectFit: 'fill',
+                        objectFit: 'scale-down',
                         maxWidth: '100%'
                     }}
                 />
@@ -33,12 +34,15 @@ export default function BookPanel() {
     const RightPage = React.forwardRef((props, ref) => {
         return (
             <div className='rightPage' ref={ref}>
+                <Box sx={{ width: '100vw', height: '0.5vh', maxWidth: '100%' }} />
                 <img
                     src={props.imgSrc}
                     alt=""
                     style={{
-                        objectFit: 'fill',
-                        maxWidth: '100%'
+                        width: '27.5vw',
+                        height: '70vh',
+                        maxWidth: '100%',
+                        borderRadius: 10
                     }}
                 />
                 <p>{props.children}</p>
@@ -64,14 +68,14 @@ export default function BookPanel() {
                             width={520}
                             height={650}
                             size='stretch'
-                            maxShadowOpacity={0.25}
+                            maxShadowOpacity={0.5}
                             mobileScrollSupport={true}
                             style={{
                                 zIndex: 1
                             }}
                         >
                             <LeftPage imgSrc={""}>Hello test</LeftPage>
-                            <RightPage imgSrc={""}>Hello test</RightPage>
+                            <RightPage imgSrc={pageOne}>Hello test</RightPage>
                             <LeftPage imgSrc={""}>Hello test</LeftPage>
                             <RightPage imgSrc={""}>Hello test</RightPage>
                             <LeftPage imgSrc={""}>Hello test</LeftPage>
@@ -81,18 +85,18 @@ export default function BookPanel() {
                 </Grid>
             </Grid>
             <Box sx={{ width: '100vw', height: '60vh', maxWidth: '100%' }}>
-            <img
-                src={bookBase}
-                alt='Book Base'
-                aria-label='Book Base'
-                draggable='false'
-                style={{
-                    width: '57vw',
-                    height: '80vh',
-                    position: 'relative',
-                    top: '-101%'
-                }}
-            />
+                <img
+                    src={bookBase}
+                    alt='Book Base'
+                    aria-label='Book Base'
+                    draggable='false'
+                    style={{
+                        width: '57vw',
+                        height: '80vh',
+                        position: 'relative',
+                        top: '-101%'
+                    }}
+                />
             </Box>
             <Box sx={{ width: '100vw', height: '10vh', maxWidth: '100%' }} />
         </div>
