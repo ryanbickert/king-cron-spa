@@ -17,7 +17,7 @@ export default function GamePanel() {
                 <CustomBorderB />
                 <Box sx={{ width: '100vw', height: '5vh', maxWidth: '100%' }} />
                 <Box sx={{ width: '100vw', height: '65vh', maxWidth: '100%' }}>
-                    <Unity unityProvider={unityProvider} style={{ width: '40vw', height: '60vh', borderRadius: 10 }} />
+                    {/* <Unity unityProvider={unityProvider} style={{ width: '40vw', height: '60vh', borderRadius: 10 }} /> */}
                 </Box>
                 <CustomBorder />
             </div>

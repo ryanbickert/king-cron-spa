@@ -1,6 +1,8 @@
 import '../App.css';
-import React, { useRef } from 'react';
+import React from 'react';
+import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import HTMLFlipBook from 'react-pageflip';
 import bookBase from '../images/book-base.png';
 import leftPage from '../images/left-page.png';
@@ -46,33 +48,53 @@ export default function BookPanel() {
 
     return (
         <div className="WoodPanel">
-            <Box sx={{ width: '100vw', height: '5vh', maxWidth: '100%' }} />
+            <Box sx={{ width: '100vw', height: '10vh', maxWidth: '100%' }} />
+            <Grid container>
+                <Grid item xs={2.65} />
+                <Grid item>
+                    <Box
+                        sx={{
+                            width: '55vw',
+                            height: '55vh',
+                            maxWidth: '100%',
+                            backgroundColor: 'red'
+                        }}
+                    >
+                        <HTMLFlipBook
+                            width={520}
+                            height={650}
+                            size='stretch'
+                            maxShadowOpacity={0.25}
+                            mobileScrollSupport={true}
+                            style={{
+                                zIndex: 1
+                            }}
+                        >
+                            <LeftPage imgSrc={""}>Hello test</LeftPage>
+                            <RightPage imgSrc={""}>Hello test</RightPage>
+                            <LeftPage imgSrc={""}>Hello test</LeftPage>
+                            <RightPage imgSrc={""}>Hello test</RightPage>
+                            <LeftPage imgSrc={""}>Hello test</LeftPage>
+                            <RightPage imgSrc={""}>Hello test</RightPage>
+                        </HTMLFlipBook>
+                    </Box>
+                </Grid>
+            </Grid>
+            <Box sx={{ width: '100vw', height: '60vh', maxWidth: '100%' }}>
             <img
                 src={bookBase}
                 alt='Book Base'
                 aria-label='Book Base'
                 draggable='false'
                 style={{
-                    width: '70vw',
-                    height: '80vh'
+                    width: '57vw',
+                    height: '80vh',
+                    position: 'relative',
+                    top: '-101%'
                 }}
             />
-            <Box sx={{ width: '50vw', height: '50vh', maxWidth: '100%' }}>
-                <HTMLFlipBook
-                    width={520}
-                    height={650}
-                    size='stretch'
-                    maxShadowOpacity={0.25}
-                    mobileScrollSupport={true}
-                >
-                    <LeftPage imgSrc={""}>Hello test</LeftPage>
-                    <RightPage imgSrc={""}>Hello test</RightPage>
-                    <LeftPage imgSrc={""}>Hello test</LeftPage>
-                    <RightPage imgSrc={""}>Hello test</RightPage>
-                    <LeftPage imgSrc={""}>Hello test</LeftPage>
-                    <RightPage imgSrc={""}>Hello test</RightPage>
-                </HTMLFlipBook>
             </Box>
+            <Box sx={{ width: '100vw', height: '10vh', maxWidth: '100%' }} />
         </div>
     );
 }

@@ -10,6 +10,10 @@
   line-height: 1;
   background-image: url("./images/wood-panel.png");
   background-repeat: repeat;
+  z-index: -50;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  align-items: center;
 }
 
 .Stone {
