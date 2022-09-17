@@ -406,3 +406,6 @@ build/
 
 # Text Files
 *.txt
+
+# Gifs
+*.gif
