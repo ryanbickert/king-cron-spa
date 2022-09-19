@@ -3,23 +3,17 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import HTMLFlipBook from 'react-pageflip';
-import bookBase from '../images/book/book-base.png';
-import leftPage from '../images/book/left-page.png';
-import rightPage from '../images/book/right-page.png';
-import pageOne from '../images/book/page-one.gif';
-import pageTwo from '../images/book/page-two.gif';
-import pageThree from '../images/book/page-three.gif';
-import pageFour from '../images/book/page-four.gif';
-import pageFive from '../images/book/page-five.gif';
-import pageSix from '../images/book/page-six.png';
+import bookBase from '../media/book/book-base.png';
+import pageOne from '../media/book/page-one.gif';
+import pageTwo from '../media/book/page-two.gif';
+import pageThree from '../media/book/page-three.gif';
+import pageFour from '../media/book/page-four.gif';
+import pageFive from '../media/book/page-five.gif';
+import pageSix from '../media/book/page-six.png';
+import CustomBorder, { CustomBorderB } from '../components/CustomBorders';
 import CustomButtons from '../components/CustomButtons';
 
 export default function BookPanel() {
-    const pages = [leftPage, rightPage, leftPage, rightPage, leftPage, rightPage, leftPage, rightPage]
-
-    const bookWidth = (window.innerWidth);
-    const bookHeight = (window.innerHeight);
-
     const LeftPage = React.forwardRef((props, ref) => {
         return (
             <div className='leftPage' ref={ref}>
@@ -59,51 +53,62 @@ export default function BookPanel() {
 
     return (
         <div className="WoodPanel">
-            <Box sx={{ width: '100vw', height: '10vh', maxWidth: '100%' }} />
-            <Grid container>
-                <Grid item xs={2.65} />
-                <Grid item>
-                    <Box
-                        sx={{
-                            width: '55vw',
-                            height: '55vh',
-                            maxWidth: '100%'
-                        }}
-                    >
-                        <HTMLFlipBook
-                            width={520}
-                            height={650}
-                            size='stretch'
-                            maxShadowOpacity={0.5}
-                            mobileScrollSupport={true}
-                            style={{
-                                zIndex: 1
+            <CustomBorderB />
+            <Box sx={{ width: '100vw', height: '4vw', maxWidth: '100%' }} />
+            <div
+                style={{
+                    height: '38vw'
+                }}
+            >
+                <Grid container>
+                    <Grid item xs={2.75} />
+                    <Grid item>
+                        <Box
+                            sx={{
+                                width: '55vw',
+                                height: '55vh',
+                                maxWidth: '100%'
                             }}
                         >
-                            <LeftPage imgSrc={pageOne}></LeftPage>
-                            <RightPage imgSrc={pageTwo}></RightPage>
-                            <LeftPage imgSrc={pageThree}></LeftPage>
-                            <RightPage imgSrc={pageFour}></RightPage>
-                            <LeftPage imgSrc={pageFive}></LeftPage>
-                            <RightPage imgSrc={pageSix}></RightPage>
-                        </HTMLFlipBook>
-                    </Box>
+                            <HTMLFlipBook
+                                width={520}
+                                height={650}
+                                size='stretch'
+                                maxShadowOpacity={0.5}
+                                mobileScrollSupport={true}
+                                style={{
+                                    zIndex: 1
+                                }}
+                            >
+                                <LeftPage imgSrc={pageOne}></LeftPage>
+                                <RightPage imgSrc={pageTwo}></RightPage>
+                                <LeftPage imgSrc={pageThree}></LeftPage>
+                                <RightPage imgSrc={pageFour}></RightPage>
+                                <LeftPage imgSrc={pageFive}></LeftPage>
+                                <RightPage imgSrc={pageSix}></RightPage>
+                            </HTMLFlipBook>
+                        </Box>
+                    </Grid>
                 </Grid>
-            </Grid>
-            <Box sx={{ width: '100vw', height: '60vh', maxWidth: '100%' }}>
-                <img
-                    src={bookBase}
-                    alt='Book Base'
-                    aria-label='Book Base'
-                    draggable='false'
-                    style={{
-                        width: '57vw',
-                        position: 'relative',
-                        top: '-101%'
-                    }}
-                />
-            </Box>
-            <Box sx={{ width: '100vw', height: '10vh', maxWidth: '100%' }} />
+                <Box sx={{
+                    width: '57vw',
+                    position: 'relative',
+                    top: '-77.5%',
+                    left: '22%'
+                }}>
+                    <img
+                        src={bookBase}
+                        alt='Book Base'
+                        aria-label='Book Base'
+                        draggable='false'
+                        style={{
+                            width: '57vw'
+                        }}
+                    />
+                </Box>
+            </div>
+            <Box sx={{ width: '100vw', height: '4vw', maxWidth: '100%' }} />
+            <CustomBorder />
         </div>
     );
 }

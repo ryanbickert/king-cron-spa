@@ -2,7 +2,7 @@ import '../App.css';
 import React from 'react';
 import CustomDataGrid from '../components/CustomDataGrid';
 import { CustomBorderB } from '../components/CustomBorders';
-import ScoresParchment from '../images/scores-parchment.png';
+import ScoresParchment from '../media/scores-parchment.png';
 
 export default function ScoresPanel() {
     return (

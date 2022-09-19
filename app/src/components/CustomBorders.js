@@ -1,6 +1,6 @@
 import React from 'react';
-import scrollBorderA from '../images/scroll-border-a.png';
-import scrollBorderB from '../images/scroll-border-b.png';
+import scrollBorderA from '../media/scroll-border-a.png';
+import scrollBorderB from '../media/scroll-border-b.png';
 
 export default function CustomBorderA() {
     return (

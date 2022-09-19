@@ -8,7 +8,7 @@
   text-align: center;
   font-size: 0;
   line-height: 1;
-  background-image: url("./images/wood-panel.png");
+  background-image: url("./media/wood-panel.png");
   background-repeat: repeat;
   z-index: -50;
   overflow-x: hidden;
@@ -20,7 +20,7 @@
   text-align: center;
   font-size: 0;
   line-height: 1;
-  background-image: url("./images/stone.png");
+  background-image: url("./media/stone.png");
   background-repeat: repeat;
 }
 
@@ -30,7 +30,7 @@
   line-height: 0;
   margin: 0;
   padding: 0;
-  background-image: url("./images/book/left-page.png");
+  background-image: url("./media/book/left-page.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -41,7 +41,7 @@
   line-height: 0;
   margin: 0;
   padding: 0;
-  background-image: url("./images/book/right-page.png");
+  background-image: url("./media/book/right-page.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }

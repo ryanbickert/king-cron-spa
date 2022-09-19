@@ -409,3 +409,6 @@ build/
 
 # Gifs
 *.gif
+
+# Videos
+*.mp4

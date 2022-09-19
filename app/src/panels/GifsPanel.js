@@ -4,9 +4,9 @@ import Box from '@mui/material/Box';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import CustomBorder, { CustomBorderB } from '../components/CustomBorders';
 import { CronButton, ServerRedButton, ServerGreenButton } from '../components/CustomButtons';
-import cronGif from '../images/cron-gif.gif';
-import serverRedGif from '../images/server-red-gif.gif';
-import serverGreenGif from '../images/server-green-gif.gif';
+import cronGif from '../media/cron-gif.gif';
+import serverRedGif from '../media/server-red-gif.gif';
+import serverGreenGif from '../media/server-green-gif.gif';
 
 export default function GifsPanel() {
     return (
@@ -100,7 +100,7 @@ export default function GifsPanel() {
                             height: '70vh',
                             maxWidth: '100%',
                             position: 'absolute',
-                            top: '178.9%'
+                            top: '156%'
                         }}>
                             <CustomBorderB />
                             <Box sx={{ width: '21.45vw', height: '10vh', position: 'absolute', top: '50%', left: '5%', whiteSpace: 'pre' }}>
@@ -109,7 +109,7 @@ export default function GifsPanel() {
                                 <ServerRedButton handleClick={() => zoomToElement("serverRedGif")} />
                                 <ServerGreenButton handleClick={() => zoomToElement("serverGreenGif")} />
                             </Box>
-                            <Box sx={{ position: 'absolute', top: '95.9%' }}>
+                            <Box sx={{ position: 'absolute', top: '96%' }}>
                                 <CustomBorder />
                             </Box>
                         </div>

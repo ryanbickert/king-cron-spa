@@ -1,10 +1,10 @@
 import React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import playNowImage from '../images/play-now.png';
-import cronButtonImage from '../images/cron-button.png';
-import serverRedButtonImage from '../images/server-red-button.png';
-import serverGreenButtonImage from '../images/server-green-button.png';
+import playNowImage from '../media/play-now.png';
+import cronButtonImage from '../media/cron-button.png';
+import serverRedButtonImage from '../media/server-red-button.png';
+import serverGreenButtonImage from '../media/server-green-button.png';
 
 const PlayNowButton = styled(Button)(({ }) => ({
     width: '12vw',

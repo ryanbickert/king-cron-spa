@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import CustomBorder, { CustomBorderB }  from '../components/CustomBorders';
-import cronMap from '../images/cron-map.png';
+import cronMap from '../media/cron-map.png';
 
 export default function MapPanel() {
     return (
