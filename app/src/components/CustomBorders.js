@@ -11,7 +11,8 @@ export default function CustomBorderA() {
             style={{
                 width: '100vw',
                 maxWidth: '100%',
-                height: '3vh'
+                height: '3vh',
+                userSelect: 'none'
             }}
         />
     );
@@ -26,7 +27,8 @@ export function CustomBorderB() {
             style={{
                 width: '100vw',
                 maxWidth: '100%',
-                height: '3vh'
+                height: '3vh',
+                userSelect: 'none'
             }}
         />
     );

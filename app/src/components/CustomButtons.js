@@ -8,13 +8,15 @@ import serverGreenButtonImage from '../media/server-green-button.png';
 
 const PlayNowButton = styled(Button)(({ }) => ({
     width: '12vw',
-    height: '5vh',
+    height: '5vmin',
+    minWidth: '12vw',
+    maxHeight: '5vmin',
     backgroundImage: `url(${playNowImage})`,
     backgroundSize: '12vw 5vh',
     backgroundRepeat: 'no-repeat',
     fontFamily: 'AlbertText',
     color: '#573720',
-    fontSize: '2vw',
+    fontSize: '2.5vmin',
     whiteSpace: 'nowrap',
     '&:hover': {
         color: '#21140B'

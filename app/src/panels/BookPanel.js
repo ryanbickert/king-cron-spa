@@ -52,61 +52,61 @@ export default function BookPanel() {
     })
 
     return (
-        <div className="WoodPanel">
-            <CustomBorderB />
-            <Box sx={{ width: '100vw', height: '4vw', maxWidth: '100%' }} />
-            <div
-                style={{
-                    height: '38vw'
-                }}
-            >
-                <Grid container>
-                    <Grid item xs={2.75} />
-                    <Grid item>
-                        <Box
-                            sx={{
-                                width: '55vw',
-                                height: '55vh',
-                                maxWidth: '100%'
-                            }}
-                        >
-                            <HTMLFlipBook
-                                width={520}
-                                height={650}
-                                size='stretch'
-                                maxShadowOpacity={0.5}
-                                mobileScrollSupport={true}
-                                style={{
-                                    zIndex: 1
+        <div style={{ position: 'relative' }}>
+            <div className="WoodPanel">
+                <CustomBorderB />
+                <Box sx={{ width: '100vw', height: '4vh', maxWidth: '100%' }} />
+                <div
+                    style={{
+                        height: '38vw'
+                    }}
+                >
+                    <Grid container>
+                        <Grid item xs={2.75} />
+                        <Grid item>
+                            <Box
+                                sx={{
+                                    width: '55vw',
+                                    height: '55vh',
+                                    maxWidth: '100%'
                                 }}
                             >
-                                <LeftPage imgSrc={pageOne}></LeftPage>
-                                <RightPage imgSrc={pageTwo}></RightPage>
-                                <LeftPage imgSrc={pageThree}></LeftPage>
-                                <RightPage imgSrc={pageFour}></RightPage>
-                                <LeftPage imgSrc={pageFive}></LeftPage>
-                                <RightPage imgSrc={pageSix}></RightPage>
-                            </HTMLFlipBook>
-                        </Box>
+                                <HTMLFlipBook
+                                    width={520}
+                                    height={650}
+                                    size='stretch'
+                                    maxShadowOpacity={0.5}
+                                    mobileScrollSupport={true}
+                                    style={{
+                                        zIndex: 2
+                                    }}
+                                >
+                                    <LeftPage imgSrc={pageOne}></LeftPage>
+                                    <RightPage imgSrc={pageTwo}></RightPage>
+                                    <LeftPage imgSrc={pageThree}></LeftPage>
+                                    <RightPage imgSrc={pageFour}></RightPage>
+                                    <LeftPage imgSrc={pageFive}></LeftPage>
+                                    <RightPage imgSrc={pageSix}></RightPage>
+                                </HTMLFlipBook>
+                            </Box>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Box sx={{
-                    width: '57vw',
-                    position: 'relative',
-                    top: '-77.5%',
-                    left: '22%'
-                }}>
-                    <img
-                        src={bookBase}
-                        alt='Book Base'
-                        aria-label='Book Base'
-                        draggable='false'
-                        style={{
-                            width: '57vw'
-                        }}
-                    />
-                </Box>
+                </div>
             </div>
+            <img
+                src={bookBase}
+                alt='Book Base'
+                aria-label='Book Base'
+                draggable='false'
+                style={{
+                    width: '57vw',
+                    maxWidth: '57vw',
+                    position: 'absolute',
+                    top: '7vh',
+                    left: '22%',
+                    zIndex: 1
+                }}
+            />
             <Box sx={{ width: '100vw', height: '4vw', maxWidth: '100%' }} />
             <CustomBorder />
         </div>

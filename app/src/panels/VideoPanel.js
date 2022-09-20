@@ -4,10 +4,10 @@ import Box from '@mui/material/Box';
 import CustomBorder from '../components/CustomBorders';
 import CustomButtons from '../components/CustomButtons';
 
-export default function CronCloseupPanel() {
+export default function VideoPanel() {
     return (
-        <div className="Stone">
-            <Box sx={{ width: '70vw', height: '50vh', position: 'relative', left: '15%', paddingTop: '5vh' }}>
+        <div className="Stone" style={{ position: 'relative' }}>
+            <Box sx={{ width: '100vw', height: '65vh', maxWidth: '100%' }}>
                 <video
                     src='videos/video-panel-mp4.mp4'
                     autoPlay={true}
@@ -16,24 +16,25 @@ export default function CronCloseupPanel() {
                     width={'100%'}
                     height={'100%'}
                     style={{
-                        borderRadius: 15,
-                        objectFit: 'cover'
+                        objectFit: 'fill',
+                        marginTop: -1
                     }}
                 >
                     This video is unable to load on your browser.
                 </video>
             </Box>
-            <Box sx={{ width: '50vw', position: 'absolute', top: '14%', left: "27.5%" }}>
-                <p style={{ marginTop: 0, marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '6vw', padding: 0, whiteSpace: 'nowrap' }}>
+            <Box sx={{ width: '100vw', maxWidth: '100%', position: 'absolute', top: '25%', MozUserSelect: 'none', userSelect: 'none', msUserSelect: 'none', WebkitUserSelect: 'none' }}>
+                <p style={{ marginTop: 0, marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '10vmin', whiteSpace: 'nowrap' }}>
                     King Cron
                 </p>
-                <p style={{ marginTop: '2vw', marginBottom: '3vw', color: '#BC9660', fontFamily: 'AlbertText', fontSize: '4vw', whiteSpace: 'nowrap' }}>
+                <p style={{ marginTop: '2vmin', marginBottom: '4vmin', color: '#BC9660', fontFamily: 'AlbertText', fontSize: '8vmin', whiteSpace: 'nowrap' }}>
                     The Kingdom Awaits
                 </p>
                 <CustomButtons />
             </Box>
-            <Box sx={{ width: '100vw', height: '3vh', maxWidth: '100%' }} />
-            <CustomBorder />
+            <Box sx={{ position: 'absolute', top: '95.5%' }}>
+                <CustomBorder />
+            </Box>
         </div >
     );
 }
