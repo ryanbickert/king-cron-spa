@@ -4,47 +4,30 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import HTMLFlipBook from 'react-pageflip';
 import bookBase from '../media/book/book-base.png';
-import pageOne from '../media/book/page-one.gif';
-import pageTwo from '../media/book/page-two.gif';
-import pageThree from '../media/book/page-three.gif';
-import pageFour from '../media/book/page-four.gif';
-import pageFive from '../media/book/page-five.gif';
-import pageSix from '../media/book/page-six.png';
 import CustomBorder, { CustomBorderB } from '../components/CustomBorders';
 import CustomButtons from '../components/CustomButtons';
 
 export default function BookPanel() {
-    const LeftPage = React.forwardRef((props, ref) => {
+    const CharacterPage = React.forwardRef((props, ref) => {
         return (
-            <div className='leftPage' ref={ref}>
-                <Box sx={{ width: '100vw', height: '0.5vh', maxWidth: '100%' }} />
-                <img
-                    src={props.imgSrc}
-                    alt=""
-                    style={{
-                        objectFit: 'scale-down',
-                        maxWidth: '100%',
-                        borderRadius: 10
-                    }}
-                />
-            </div>
+            <div className={props.myClassName} ref={ref} />
         );
     })
 
-    const RightPage = React.forwardRef((props, ref) => {
+    const NotesPage = React.forwardRef((props, ref) => {
         return (
-            <div className='rightPage' ref={ref}>
-                <Box sx={{ width: '100vw', height: '0.5vh', maxWidth: '100%' }} />
+            <div className={props.myClassName} ref={ref}>
+                <Box sx={{ width: '100vw', height: '3vmin', maxWidth: '100%' }} />
                 <img
                     src={props.imgSrc}
                     alt=""
                     style={{
-                        objectFit: 'scale-down',
+                        objectFit: 'fill',
                         maxWidth: '100%',
                         borderRadius: 10
                     }}
                 />
-                <Box sx={{ height: '5vh', width: '12vw', position: 'relative', top: '-52.5%', left: "28%" }}>
+                <Box sx={{ height: '5vh', width: '12vw', position: 'absolute', top: '55%', left: "28%" }}>
                     <CustomButtons />
                 </Box>
             </div>
@@ -55,7 +38,7 @@ export default function BookPanel() {
         <div style={{ position: 'relative' }}>
             <div className="WoodPanel">
                 <CustomBorderB />
-                <Box sx={{ width: '100vw', height: '4vh', maxWidth: '100%' }} />
+                <Box sx={{ width: '100vw', height: '8vh', maxWidth: '100%' }} />
                 <div
                     style={{
                         height: '38vw'
@@ -74,6 +57,8 @@ export default function BookPanel() {
                                 <HTMLFlipBook
                                     width={520}
                                     height={650}
+                                    minWidth={50}
+                                    minHeight={50}
                                     size='stretch'
                                     maxShadowOpacity={0.5}
                                     mobileScrollSupport={true}
@@ -81,12 +66,12 @@ export default function BookPanel() {
                                         zIndex: 2
                                     }}
                                 >
-                                    <LeftPage imgSrc={pageOne}></LeftPage>
-                                    <RightPage imgSrc={pageTwo}></RightPage>
-                                    <LeftPage imgSrc={pageThree}></LeftPage>
-                                    <RightPage imgSrc={pageFour}></RightPage>
-                                    <LeftPage imgSrc={pageFive}></LeftPage>
-                                    <RightPage imgSrc={pageSix}></RightPage>
+                                    <CharacterPage myClassName='pageOne'></CharacterPage>
+                                    <NotesPage myClassName='pageTwo' imgSrc={""}></NotesPage>
+                                    <CharacterPage myClassName='pageThree'></CharacterPage>
+                                    <NotesPage myClassName='pageFour' imgSrc={""}></NotesPage>
+                                    <CharacterPage myClassName='pageFive'></CharacterPage>
+                                    <NotesPage myClassName='pageSix' imgSrc={""}></NotesPage>
                                 </HTMLFlipBook>
                             </Box>
                         </Grid>
@@ -100,15 +85,19 @@ export default function BookPanel() {
                 draggable='false'
                 style={{
                     width: '57vw',
+                    height: '38vw',
+                    maxHeight: '38vw',
                     maxWidth: '57vw',
                     position: 'absolute',
-                    top: '7vh',
+                    top: 'calc(11vh - 3%)',
                     left: '22%',
                     zIndex: 1
                 }}
             />
-            <Box sx={{ width: '100vw', height: '4vw', maxWidth: '100%' }} />
-            <CustomBorder />
+            <div className='WoodPanel'>
+                <Box sx={{ width: '100vw', height: '2.5vh', maxWidth: '100%' }} />
+                <CustomBorder />
+            </div>
         </div>
     );
 }

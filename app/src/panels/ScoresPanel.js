@@ -1,12 +1,12 @@
 import '../App.css';
 import React from 'react';
 import CustomDataGrid from '../components/CustomDataGrid';
-import { CustomBorderB } from '../components/CustomBorders';
+import CustomBorder, { CustomBorderB } from '../components/CustomBorders';
 import ScoresParchment from '../media/scores-parchment.png';
 
 export default function ScoresPanel() {
     return (
-        <div className="Stone">
+        <div className="Stone" style= {{ position: 'relative' }}>
             <CustomBorderB />
             <img
                 src={ScoresParchment}
@@ -14,8 +14,8 @@ export default function ScoresPanel() {
                 aria-label="Scores Parchment"
                 draggable='false'
                 style={{
-                    width: '40vw',
-                    height: '60vh',
+                    width: '50vw',
+                    height: '60vmin',
                     marginTop: '1vh'
                 }}
             />
@@ -23,17 +23,18 @@ export default function ScoresPanel() {
                 width: '30vw',
                 height: '50vh',
                 position: 'absolute',
-                top: '335%',
+                top: '17%',
                 left: '35%'
             }}>
-                <p style={{ marginTop: 0, marginBottom: 0, color: '#573720', fontFamily: 'AlbertText', fontSize: '3vw', whiteSpace: 'nowrap' }}>
+                <p style={{ marginTop: 0, marginBottom: 0, color: '#573720', fontFamily: 'AlbertText', fontSize: '5vmin', whiteSpace: 'nowrap' }}>
                     High Scores
                 </p>
-                <p style={{ marginTop: 15, marginBottom: 0, color: '#573720', fontFamily: 'AlbertText', fontSize: '1.5vw', whiteSpace: 'nowrap' }}>
+                <p style={{ marginTop: '1.5vmin', marginBottom: 0, color: '#573720', fontFamily: 'AlbertText', fontSize: '2.5vmin', whiteSpace: 'nowrap' }}>
                     Updated daily or when clicked
                 </p>
                 <CustomDataGrid />
             </div>
+            <CustomBorder />
         </div >
     );
 }

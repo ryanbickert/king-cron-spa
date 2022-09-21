@@ -3,6 +3,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import CustomBorder from '../components/CustomBorders';
 import CustomButtons from '../components/CustomButtons';
+import cronCloseup from '../media/cron-closeup-transparent.png';
 
 export default function VideoPanel() {
     return (
@@ -20,7 +21,17 @@ export default function VideoPanel() {
                         marginTop: -1
                     }}
                 >
-                    This video is unable to load on your browser.
+                    <img
+                        src={cronCloseup}
+                        alt='King Cron Closeup'
+                        aria-label='King Cron Closeup'
+                        draggable='false'
+                        style={{
+                            width: '100vw',
+                            height: '65vh',
+                            maxWith: '100%'
+                        }}
+                    />
                 </video>
             </Box>
             <Box sx={{ width: '100vw', maxWidth: '100%', position: 'absolute', top: '25%', MozUserSelect: 'none', userSelect: 'none', msUserSelect: 'none', WebkitUserSelect: 'none' }}>

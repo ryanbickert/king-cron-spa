@@ -24,26 +24,46 @@
   background-repeat: repeat;
 }
 
-.leftPage {
-  text-align: center;
-  font-size: 0;
-  line-height: 0;
-  margin: 0;
-  padding: 0;
-  background-image: url("./media/book/left-page.png");
+.pageOne {
+  background-image: url("./media/book/page-one.png");
   background-repeat: no-repeat;
   background-size: 100%;
+  position: relative;
 }
 
-.rightPage {
-  text-align: center;
-  font-size: 0;
-  line-height: 0;
-  margin: 0;
-  padding: 0;
-  background-image: url("./media/book/right-page.png");
+.pageTwo {
+  background-image: url("./media/book/page-two.png");
   background-repeat: no-repeat;
   background-size: 100%;
+  position: relative;
+}
+
+.pageThree {
+  background-image: url("./media/book/page-three.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+
+.pageFour {
+  background-image: url("./media/book/page-four.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+
+.pageFive {
+  background-image: url("./media/book/page-five.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+
+.pageSix {
+  background-image: url("./media/book/page-six.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
 }
 
 @font-face {

@@ -1,13 +1,13 @@
 import '../App.css';
 import React from 'react';
 import Box from '@mui/material/Box';
-import CustomBorder, { CustomBorderB } from '../components/CustomBorders';
+import { CustomBorderB } from '../components/CustomBorders';
 import CustomButtons from '../components/CustomButtons';
 import cronCloseup from '../media/cron-closeup-transparent.png';
 
 export default function CronCloseupPanel() {
     return (
-        <div className="Stone">
+        <div className="Stone" style= {{ position: 'relative' }}>
             <CustomBorderB />
             <img
                 src={cronCloseup}
@@ -19,7 +19,7 @@ export default function CronCloseupPanel() {
                     height: '90vh'
                 }}
             />
-            <Box sx={{ height: 500, width: '50vw', position: 'relative', top: '10%', left: "35%" }}>
+            <Box sx={{ height: 500, width: '50vw', position: 'absolute', top: '16%', left: "35%" }}>
                 <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '12vh', padding: 0 }}>
                     King Cron
                 </p>
@@ -28,7 +28,6 @@ export default function CronCloseupPanel() {
                 </p>
                 <CustomButtons />
             </Box>
-            <CustomBorder />
         </div >
     );
 }

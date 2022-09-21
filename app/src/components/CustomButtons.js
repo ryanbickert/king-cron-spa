@@ -20,7 +20,8 @@ const PlayNowButton = styled(Button)(({ }) => ({
     whiteSpace: 'nowrap',
     '&:hover': {
         color: '#21140B'
-    }
+    },
+    zIndex: 3
 }));
 
 const CharacterButton = styled(Button)(({ }) => ({

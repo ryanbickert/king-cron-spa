@@ -47,7 +47,7 @@ export default function CustomDataGrid() {
             <DataGrid
                 rows={rows}
                 columns={columns}
-                rowHeight='5vh'
+                rowHeight='5vmin'
                 rowsPerPageOptions={[5]}
                 hideFooter
                 scrollbarSize={0}
@@ -56,7 +56,7 @@ export default function CustomDataGrid() {
                 style={{
                     color: '#573720',
                     fontFamily: 'AlbertText',
-                    fontSize: '1vw',
+                    fontSize: '2.5vmin',
                     width: '29vw',
                     height: '34vh',
                     border: 'none'
