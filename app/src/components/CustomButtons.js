@@ -25,10 +25,10 @@ const PlayNowButton = styled(Button)(({ }) => ({
 }));
 
 const CharacterButton = styled(Button)(({ }) => ({
-    width: '7.15vw',
-    height: '15vh',
+    width: '13vmin',
+    height: '13vmin',
     borderRadius: 100,
-    backgroundSize: '7.15vw 15vh',
+    backgroundSize: '100% 100%',
     backgroundRepeat: 'no-repeat'
 }));
 

@@ -10,13 +10,9 @@ import serverGreenGif from '../media/server-green-gif.gif';
 
 export default function GifsPanel() {
     return (
-        <div className='Default'>
+        <div className='Default' style={{ position: 'relative' }}>
             <TransformWrapper
-                initialScale={1}
-                minScale={1}
-                panning={{ disabled: true }}
-                wheel={{ disabled: true }}
-                pinch={{ disabled: true }}
+                disabled={true}
             >
                 {({ zoomToElement }) => (
                     <>
@@ -33,11 +29,11 @@ export default function GifsPanel() {
                                 }}
                             >
                                 <div>
-                                    <Box sx={{ width: '20vw', position: 'absolute', top: '-1%', left: '1.75%', textAlign: 'center' }}>
-                                        <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '8vh', padding: 0, whiteSpace: 'nowrap' }}>
+                                    <Box sx={{ width: '20vw', position: 'absolute', top: '2vmin', left: '2%', textAlign: 'center' }}>
+                                        <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '8vmin', padding: 0, whiteSpace: 'nowrap' }}>
                                             King Cron
                                         </p>
-                                        <p style={{ marginTop: 20, marginBottom: 40, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '4vh', whiteSpace: 'pre' }}>
+                                        <p style={{ marginTop: '2vmin', color: '#BC9660', fontFamily: 'AlbertText', fontSize: '4vmin', whiteSpace: 'pre' }}>
                                             Fearless leader and
                                             <br />distinguished explorer
                                         </p>
@@ -54,12 +50,13 @@ export default function GifsPanel() {
                                     }}
                                 />
                                 <div>
-                                    <Box sx={{ width: '20vw', position: 'absolute', top: '-0%', left: '35.25%', textAlign: 'center' }}>
-                                        <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '8vh', padding: 0, whiteSpace: 'nowrap' }}>
+                                    <Box sx={{ width: '20vw', position: 'absolute', top: '2vmin', left: '35.25%', textAlign: 'center' }}>
+                                        <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '8vmin', padding: 0, whiteSpace: 'nowrap' }}>
                                             Server Red
                                         </p>
-                                        <p style={{ marginTop: 20, marginBottom: 40, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '4vh', whiteSpace: 'nowrap' }}>
-                                            Rambunctious and reliable
+                                        <p style={{ marginTop: '2vmin', color: '#BC9660', fontFamily: 'AlbertText', fontSize: '4vmin', whiteSpace: 'nowrap' }}>
+                                            Rambunctious and
+                                            <br />reliable
                                         </p>
                                     </Box>
                                 </div>
@@ -74,11 +71,11 @@ export default function GifsPanel() {
                                     }}
                                 />
                                 <div>
-                                    <Box sx={{ width: '20vw', position: 'absolute', top: '-1%', left: '68.5%', textAlign: 'center' }}>
-                                        <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '8vh', padding: 0, whiteSpace: 'nowrap' }}>
+                                    <Box sx={{ width: '20vw', position: 'absolute', top: '2vmin', left: '68.5%', textAlign: 'center' }}>
+                                        <p style={{ marginBottom: 0, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '8vmin', padding: 0, whiteSpace: 'nowrap' }}>
                                             Server Green
                                         </p>
-                                        <p style={{ marginTop: 20, marginBottom: 40, color: '#BC9660', fontFamily: 'AlbertText', fontSize: '4vh', whiteSpace: 'nowrap' }}>
+                                        <p style={{ marginTop: '2vmin', color: '#BC9660', fontFamily: 'AlbertText', fontSize: '4vmin', whiteSpace: 'nowrap' }}>
                                             Hasty and helpful
                                         </p>
                                     </Box>
@@ -100,10 +97,10 @@ export default function GifsPanel() {
                             height: '70vh',
                             maxWidth: '100%',
                             position: 'absolute',
-                            top: '156%'
+                            top: '0%'
                         }}>
                             <CustomBorderB />
-                            <Box sx={{ width: '21.45vw', height: '10vh', position: 'absolute', top: '50%', left: '5%', whiteSpace: 'pre' }}>
+                            <Box sx={{ width: '21.45vw', height: '10vh', position: 'absolute', top: '55%', left: '4.5%', whiteSpace: 'pre' }}>
                                 <CronButton handleClick={() => zoomToElement("cronGif")} />
                                 <br />
                                 <ServerRedButton handleClick={() => zoomToElement("serverRedGif")} />
@@ -113,6 +110,9 @@ export default function GifsPanel() {
                                 <CustomBorder />
                             </Box>
                         </div>
+                        {window.addEventListener('resize', (event) => {
+                            zoomToElement("cronGif");
+                        })}
                     </>
                 )}
             </TransformWrapper>
