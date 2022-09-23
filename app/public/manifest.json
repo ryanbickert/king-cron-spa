@@ -1,6 +1,7 @@
 {
   "name": "King Cron",
   "short_name": "King Cron",
+  "description": "Help King Cron get back to his Servers!",
   "icons": [
     {
       "src": "cron-icon.ico",

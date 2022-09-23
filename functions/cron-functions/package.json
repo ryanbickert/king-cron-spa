@@ -2,7 +2,6 @@
 	"name": "cron-functions",
 	"version": "1.0.0",
 	"main": "index.js",
-	"author": "Ryan Bickert",
 	"dependencies": {
 		"express": "^4.18.1",
 		"zcatalyst-sdk-node": "^2.2.0"

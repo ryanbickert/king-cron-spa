@@ -6,9 +6,9 @@ import CustomBorder, { CustomBorderB } from '../components/CustomBorders';
 export default function GamePanel() {
     const { unityProvider } = useUnityContext({
         loaderUrl: "unityBuild/Builds.loader.js",
-        dataUrl: "unityBuild/Builds.data",
-        frameworkUrl: "unityBuild/Builds.framework.js",
-        codeUrl: "unityBuild/Builds.wasm"
+        dataUrl: "unityBuild/Builds.data.unityweb",
+        frameworkUrl: "unityBuild/Builds.framework.js.unityweb",
+        codeUrl: "unityBuild/Builds.wasm.unityweb"
     });
 
     return (

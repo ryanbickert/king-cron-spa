@@ -6,24 +6,64 @@ import HTMLFlipBook from 'react-pageflip';
 import bookBase from '../media/book/book-base.png';
 import CustomBorder, { CustomBorderB } from '../components/CustomBorders';
 import CustomButtons from '../components/CustomButtons';
+import pageSix from '../media/book/page-six.png';
 
 export default function BookPanel() {
-    const CharacterPage = React.forwardRef((props, ref) => {
+    const LeftPage = React.forwardRef((props, ref) => {
         return (
-            <div className={props.myClassName} ref={ref} />
+            <div className={props.myClassName} ref={ref}>
+                <video
+                    src={props.src}
+                    autoPlay={true}
+                    loop={true}
+                    muted={true}
+                    width={'100%'}
+                    height={'100%'}
+                    style={{
+                        objectFit: 'scale-down',
+                        maxWidth: '100%',
+                        height: '99%',
+                        borderRadius: 10
+                    }}
+                />
+            </div>
         );
     })
 
-    const NotesPage = React.forwardRef((props, ref) => {
+    const RightPage = React.forwardRef((props, ref) => {
         return (
             <div className={props.myClassName} ref={ref}>
-                <Box sx={{ width: '100vw', height: '3vmin', maxWidth: '100%' }} />
+                <video
+                    src={props.src}
+                    autoPlay={true}
+                    loop={true}
+                    muted={true}
+                    width={'100%'}
+                    height={'100%'}
+                    style={{
+                        objectFit: 'scale-down',
+                        maxWidth: '100%',
+                        height: '99%',
+                        borderRadius: 10
+                    }}
+                />
+                <Box sx={{ height: '5vh', width: '12vw', position: 'absolute', top: '55%', left: "28%" }}>
+                    <CustomButtons />
+                </Box>
+            </div>
+        );
+    })
+
+    const PageSix = React.forwardRef((props, ref) => {
+        return (
+            <div className={props.myClassName} ref={ref}>
                 <img
-                    src={props.imgSrc}
+                    src={props.src}
                     alt=""
                     style={{
                         objectFit: 'fill',
                         maxWidth: '100%',
+                        height: '99%',
                         borderRadius: 10
                     }}
                 />
@@ -66,12 +106,12 @@ export default function BookPanel() {
                                         zIndex: 2
                                     }}
                                 >
-                                    <CharacterPage myClassName='pageOne'></CharacterPage>
-                                    <NotesPage myClassName='pageTwo' imgSrc={""}></NotesPage>
-                                    <CharacterPage myClassName='pageThree'></CharacterPage>
-                                    <NotesPage myClassName='pageFour' imgSrc={""}></NotesPage>
-                                    <CharacterPage myClassName='pageFive'></CharacterPage>
-                                    <NotesPage myClassName='pageSix' imgSrc={""}></NotesPage>
+                                    <LeftPage myClassName='leftPage' src={'videos/page-one.mp4'}></LeftPage>
+                                    <RightPage myClassName='rightPage' src={'videos/page-two.mp4'}></RightPage>
+                                    <LeftPage myClassName='leftPage' src={'videos/page-three.mp4'}></LeftPage>
+                                    <RightPage myClassName='rightPage' src={'videos/page-four.mp4'}></RightPage>
+                                    <LeftPage myClassName='leftPage' src={'videos/page-five.mp4'}></LeftPage>
+                                    <PageSix myClassName='rightPage' src={pageSix}></PageSix>
                                 </HTMLFlipBook>
                             </Box>
                         </Grid>

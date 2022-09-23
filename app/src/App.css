@@ -24,43 +24,15 @@
   background-repeat: repeat;
 }
 
-.pageOne {
-  background-image: url("./media/book/page-one.png");
+.leftPage {
+  background-image: url("./media/book/left-page.png");
   background-repeat: no-repeat;
   background-size: 100%;
   position: relative;
 }
 
-.pageTwo {
-  background-image: url("./media/book/page-two.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  position: relative;
-}
-
-.pageThree {
-  background-image: url("./media/book/page-three.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  position: relative;
-}
-
-.pageFour {
-  background-image: url("./media/book/page-four.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  position: relative;
-}
-
-.pageFive {
-  background-image: url("./media/book/page-five.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  position: relative;
-}
-
-.pageSix {
-  background-image: url("./media/book/page-six.png");
+.rightPage {
+  background-image: url("./media/book/right-page.png");
   background-repeat: no-repeat;
   background-size: 100%;
   position: relative;
