@@ -26,7 +26,7 @@ app.put('/submit-score', express.json(), async (req, res) => {
 		await catalystApp.search().executeSearchQuery(searchQuery)
 			.then(res => {
 				if (Object.keys(res).length !== 0) {
-					console.log("Found a record with a lower or equal score to mine.");
+					console.log("Found a record with a lower score than mine.");
 					rowData.ROWID = res.HighScores[0].ROWID;
 
 					let updateRowPromise = table.updateRow(rowData).catch(() => {
