@@ -47,4 +47,4 @@ The game was built using Unity, the most popular game engine, but the site's inf
 - react-unity-webgl - Jeffrey Lanters (Apache 2.0)
 - react-pageflip - Nodlik
 
-### See Code References & Linked Assets in the attached doc.
+### See Code References & Linked Assets in the attached pdf.
