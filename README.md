@@ -30,6 +30,7 @@ The game was built using Unity, the most popular game engine, but the site's inf
 :white_check_mark: Datastore & Fetch
 :white_check_mark: Amplify: Search
 :white_check_mark: ZCQL
+:white_check_mark: Logging
 :white_check_mark: React-CRA & Hosting
 :white_check_mark: Express Backend
 
